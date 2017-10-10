@@ -14,8 +14,9 @@ void setup() {
   // put your setup code here, to run once:
   pinMode(buttonPin, INPUT);
   pinMode(ledPin, OUTPUT);
-  Serial.begin(9600);
-  lcd.print("shake");
+  //Serial.begin(9600);
+  lcd.begin(16,2);
+  lcd.print("MAGIC 8 BALL");
 }
 
 void loop() {
@@ -23,44 +24,45 @@ void loop() {
 
   tiltStatus = digitalRead(buttonPin);
   //Compare the read buttonState to our previous state to detect change
-  if (tiltStatus != lastTiltStatus) {
     // If the state has changed, 
     if (tiltStatus == HIGH) {
-      msgValue =  random(1,10);
+      
+      msgValue = random(9) ;
+      lcd.setCursor(0,1);
       switch (msgValue){
-      case '1': 
+      case 0: 
+        lcd.print("msg 0");
+        break;
+      case 1: 
         lcd.print("msg 1");
         break;
-      case '2': 
+      case 2:
         lcd.print("msg 2");
         break;
-      case '3': 
+      case 3:
         lcd.print("msg 3");
         break; 
-      case '4': 
+      case 4:
         lcd.print("msg 4");
         break; 
-      case '5': 
+      case 5: 
         lcd.print("msg 5");
         break; 
-      case '6': 
+      case 6: 
         lcd.print("msg 6");
         break;
-      case '7': 
+      case 7: 
         lcd.print("msg 7");
         break;
-      case '8': 
+      case 8: 
         lcd.print("msg 8");
         break;
-      case '9': 
+      case 9: 
         lcd.print("msg 9");
-        break;
-      case 10:  
-        lcd.print("msg 10");
         break;
       }
     }
-    delay(50);
-  }
+    delay(250);
+
   
 }
