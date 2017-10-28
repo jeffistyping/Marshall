@@ -27,42 +27,27 @@ void loop() {
     // If the state has changed, 
     if (tiltStatus == HIGH) {
       
-      msgValue = random(9) ;
+      msgValue = random(4) ;
       lcd.setCursor(0,1);
       switch (msgValue){
       case 0: 
-        lcd.print("msg 0");
+        lcd.print("No                      ");
         break;
       case 1: 
-        lcd.print("msg 1");
+        lcd.print("Yes!                    ");
         break;
       case 2:
-        lcd.print("msg 2");
+        lcd.print("Definitely              ");
         break;
       case 3:
-        lcd.print("msg 3");
+        lcd.print("Never                   ");
         break; 
       case 4:
-        lcd.print("msg 4");
+        lcd.print("Sometimes               ");
         break; 
-      case 5: 
-        lcd.print("msg 5");
-        break; 
-      case 6: 
-        lcd.print("msg 6");
-        break;
-      case 7: 
-        lcd.print("msg 7");
-        break;
-      case 8: 
-        lcd.print("msg 8");
-        break;
-      case 9: 
-        lcd.print("msg 9");
-        break;
       }
     }
-    delay(250);
+   delay(250);
 
   
 }
