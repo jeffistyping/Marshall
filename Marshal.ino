@@ -28,19 +28,17 @@ void loop() {
   Serial.println(valToCm);
     if (valToCm >= 10 && valToCm <= 12){
      lcd.print("Proceed Forward                   "); 
-     for (pos = 0; pos <= 180; pos += 10) { // goes from 0 degrees to 180 degrees @ 1degree           
-      myservo1.write(pos); // tell servo to go to position in variable 'pos'          // Wait 5ms
-      myservo2.write(pos);    
-      delay(2);
+     myservo2.writeMicroseconds(2000); // 2000us = 180 degrees
+     delay(100);
+     myservo2.writeMicroseconds(1000); // 1000us = 0 degrees
      }
-  }
-    if (distanceValue>=925 && distanceValue<=935){
-     for (pos = 180; pos >= 0; pos -= 1) { 
+     /* if (distanceValue>=925 && distanceValue<=935){
+      for (pos = 180; pos >= 0; pos -= 1) { 
       myservo1.write(pos);              
       delay(5);
       myservo2.write(pos);
-      delay(5);                          
-    }
-  }
+      delay(5); */                         
+    
+  
 }
 
