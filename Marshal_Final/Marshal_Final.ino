@@ -25,19 +25,22 @@ void setup() {
 }
 
 void loop() {
-  distValL = convertCM(analogRead(A0));
-  distValC = convertCM(analogRead(A1));
-  distValR = convertCM(analogRead(A2));
-  delay(100);
+  distValL = convertCM(analogRead(A2));
+  distValC = convertCM(analogRead(A0));
+  distValR = convertCM(analogRead(A1));
+  delay(2000);
+  Serial.print("Left:");
   Serial.println(distValL);
+  Serial.print("Center:");
   Serial.println(distValC);
+  Serial.print("Right:");
   Serial.println(distValR);
 
   /*LCD("Testing Turn Right");
   MOTION(80,45,80,180);
   delay(500);
   MOTION(100,180,100,180);
-  delay(500);*/
+  delay(500);
   
   LCD("Testing Come Forward");
   MOTION(180,0,0,180);
@@ -45,7 +48,7 @@ void loop() {
   MOTION(180,135,0,45);
   delay(500);
    
-  /*LCD("Testing Turn Left");
+  LCD("Testing Turn Left");
   MOTION(80,0,80,0);
   delay(500);
   MOTION(100,0,100,135);
